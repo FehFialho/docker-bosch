@@ -1,0 +1,17 @@
+services:
+  queila:
+    image: nginx:latest
+    ports:
+      - 8000:8000
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+  cristian:
+    image: hashicorp/http-echo
+    command: "-text='First!'"
+  beca:
+    image: hashicorp/http-echo
+    command: "-text='Second!'"
+  helo:
+    image: hashicorp/http-echo
+    command: "-text='Third!'"
