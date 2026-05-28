@@ -1,0 +1,32 @@
+services:
+  api:
+    image: weather-forescast:latest
+
+    networks:
+      - data
+
+    ports:
+      - "6767:5091"
+
+    environment:
+      HTTP_PROXY: http://host.docker.internal:3128
+      HTTPS_PROXY: http://host.docker.internal:3128
+
+  database:
+  
+    image: mongo:latest
+    networks:
+      - data
+    
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+    volumes:
+      - databank:/data/db
+
+volumes:
+  databank:
+
+networks:
+  data:

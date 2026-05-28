@@ -1,0 +1,32 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - data
+    ports:
+      - "6767:8080"
+    depends_on:
+      - db
+    env_file:
+      - /api/.env
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      - data
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: "821hs91ukd_uwq&1*9j"
+    volumes:
+      - databank:/var/opt/mssql
+
+volumes:
+  databank:
+
+networks:
+  data:
