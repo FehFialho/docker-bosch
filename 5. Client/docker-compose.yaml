@@ -1,0 +1,39 @@
+services:
+
+  maestro:
+    image: nginx:latest
+    ports:
+      - 9090:8000
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+  worker-patrick:
+    image: hashicorp/http-echo
+    command: "-text='Aulinha de IOT, tigradinha!'"
+  worker-trevisan:
+    image: hashicorp/http-echo
+    command: "-text='Bora de Csharpzada? Só 50 minutinhos de intervalo antes...'"
+  worker-don:
+    image: hashicorp/http-echo
+    command: "-text='ᵒᵒᶦ ᵐᵉⁿᶦⁿᵃˢ ᵇᵒʳᵃ ᵉˢᵗᵘᵈᵃʳ ᵇᵃⁿᶜᵒ'"
+
+  client-joy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+
+  client-lays:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
+    
+  plankton:
+    image: crcardd/plankton:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+    - 5555:5032
