@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\3. Database\\api\\API.csproj": {}
+    "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\6. MultStage\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\3. Database\\api\\API.csproj": {
+    "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\6. MultStage\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\3. Database\\api\\API.csproj",
-        "projectName": "API",
-        "projectPath": "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\3. Database\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\6. MultStage\\Client\\Client.csproj",
+        "projectName": "Client",
+        "projectPath": "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\6. MultStage\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\3. Database\\api\\obj\\",
+        "outputPath": "C:\\Users\\disrct\\Desktop\\fehfito\\docker-bosch\\6. MultStage\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,26 +43,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Relational": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -75,9 +55,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

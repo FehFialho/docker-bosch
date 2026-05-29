@@ -1,0 +1,9 @@
+services:
+
+  client-joy:
+    # image: client-joy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
