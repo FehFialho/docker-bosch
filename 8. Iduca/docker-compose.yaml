@@ -1,0 +1,36 @@
+services:
+
+  api:
+    image: api-iduca
+    build:
+      context: .
+      dockerfile: BackDocker
+    environment:
+      DB_HOST: bd
+      DB_PORT: 3306
+      DB_NAME: 'iduca_db'
+      DB_USER: 'admin'
+      DB_PASS: '123'
+    depends_on:
+      - bd
+
+  bd:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'iduca_db'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: '123'
+
+  front:
+    image: front-iduca
+    build:
+      context: .
+      dockerfile: FrontDocker
+    environment:
+      NEXT_PUBLIC_API_HOST:
+      NEXT_PUBLIC_API_PORT: 5284
+      NEXT_PUBLIC_API_ENP:
+    depends_on:
+      - api
+      - bd

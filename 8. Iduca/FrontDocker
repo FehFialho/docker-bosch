@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY ./Code/Frontend/package.json ./
+
+RUN npm install
+
+COPY ./Code/Frontend/ ./
+
+# RUN addgroup -S testers
+# RUN adduser -S beta_cristian -G testers>
+
+CMD ["npm", "run", "dev", "--", "--host"]
+
+EXPOSE 3000
+# USER beta_cristian
